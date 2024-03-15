@@ -90,6 +90,10 @@
 		1886601B253DDBC0005158FC /* Dimentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886601A253DDBC0005158FC /* Dimentions.swift */; };
 		1887AA3E254EA0A200EF14F8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887AA3D254EA0A200EF14F8 /* UIViewController+Extension.swift */; };
 		18A7A8112BA412F8005D7FCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */; };
+		18A7A8192BA416D5005D7FCD /* IronSourceBannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8152BA416D4005D7FCD /* IronSourceBannerDelegate.swift */; };
+		18A7A81A2BA416D5005D7FCD /* IronSourceInterstitialDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8162BA416D4005D7FCD /* IronSourceInterstitialDelegate.swift */; };
+		18A7A81B2BA416D5005D7FCD /* IronSourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8172BA416D5005D7FCD /* IronSourceProtocols.swift */; };
+		18A7A81C2BA416D5005D7FCD /* IronSourceInitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8182BA416D5005D7FCD /* IronSourceInitDelegate.swift */; };
 		18A8E5E725385BDE00448BF6 /* WidgetTemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E5E625385BDE00448BF6 /* WidgetTemplatesViewController.swift */; };
 		18A8E62B253862F100448BF6 /* templates.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8E62A253862F100448BF6 /* templates.json */; };
 		18A8E64C253865DE00448BF6 /* PullUpController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E646253865DE00448BF6 /* PullUpController+Animation.swift */; };
@@ -890,6 +894,10 @@
 		1886601A253DDBC0005158FC /* Dimentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimentions.swift; sourceTree = "<group>"; };
 		1887AA3D254EA0A200EF14F8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18A7A8152BA416D4005D7FCD /* IronSourceBannerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceBannerDelegate.swift; sourceTree = "<group>"; };
+		18A7A8162BA416D4005D7FCD /* IronSourceInterstitialDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialDelegate.swift; sourceTree = "<group>"; };
+		18A7A8172BA416D5005D7FCD /* IronSourceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceProtocols.swift; sourceTree = "<group>"; };
+		18A7A8182BA416D5005D7FCD /* IronSourceInitDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInitDelegate.swift; sourceTree = "<group>"; };
 		18A8E5E625385BDE00448BF6 /* WidgetTemplatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTemplatesViewController.swift; sourceTree = "<group>"; };
 		18A8E62A253862F100448BF6 /* templates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = templates.json; sourceTree = "<group>"; };
 		18A8E646253865DE00448BF6 /* PullUpController+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PullUpController+Animation.swift"; sourceTree = "<group>"; };
@@ -1418,6 +1426,17 @@
 				187EC6E325386C3A0066EEBF /* TemplateCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		18A7A8142BA416A6005D7FCD /* Ironsource */ = {
+			isa = PBXGroup;
+			children = (
+				18A7A8152BA416D4005D7FCD /* IronSourceBannerDelegate.swift */,
+				18A7A8182BA416D5005D7FCD /* IronSourceInitDelegate.swift */,
+				18A7A8162BA416D4005D7FCD /* IronSourceInterstitialDelegate.swift */,
+				18A7A8172BA416D5005D7FCD /* IronSourceProtocols.swift */,
+			);
+			path = Ironsource;
 			sourceTree = "<group>";
 		};
 		18A8E644253865DE00448BF6 /* SOPullUpView */ = {
@@ -2085,6 +2104,7 @@
 		18FAF0492538252B009E53C6 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				18A7A8142BA416A6005D7FCD /* Ironsource */,
 				18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */,
 				180E5CB0253AF62B009FA6B5 /* Widgets.entitlements */,
 				0489E913259CD5EF0039F19D /* WidgetsDebug.entitlements */,
@@ -3220,6 +3240,7 @@
 				187EC6D625386BB40066EEBF /* TemplateGroupTableViewCell.swift in Sources */,
 				18D4CD90253ABC3F001A5504 /* AlertMessage.swift in Sources */,
 				18D4CAFA253ABAFE001A5504 /* GMPalette.swift in Sources */,
+				18A7A81C2BA416D5005D7FCD /* IronSourceInitDelegate.swift in Sources */,
 				187EC7032538781E0066EEBF /* UIColor+Extension.swift in Sources */,
 				18D4CD9E253ABC3F001A5504 /* Dictionary+Extensions.swift in Sources */,
 				187EC6F8253871AC0066EEBF /* TemplateWidget.swift in Sources */,
@@ -3294,6 +3315,7 @@
 				18D4CDAE253ABC3F001A5504 /* UnsplashSearchController.swift in Sources */,
 				18D4CD92253ABC3F001A5504 /* RequestFlickrImages.swift in Sources */,
 				18D4CD9B253ABC3F001A5504 /* NSError+Extensions.swift in Sources */,
+				18A7A81B2BA416D5005D7FCD /* IronSourceProtocols.swift in Sources */,
 				18D4CDAF253ABC3F001A5504 /* UnsplashPhotoPickerViewController+UICollectionView.swift in Sources */,
 				18D4CD9C253ABC3F001A5504 /* UIColor+Extensions.swift in Sources */,
 				187EC6E425386C3A0066EEBF /* TemplateCollectionViewCell.swift in Sources */,
@@ -3302,6 +3324,7 @@
 				18D4CDA1253ABC3F001A5504 /* String+Localization.swift in Sources */,
 				18BD2945253EA02D00844420 /* DatePickerController.swift in Sources */,
 				18D4CB02253ABAFE001A5504 /* BottomPopupPresentAnimator.swift in Sources */,
+				18A7A81A2BA416D5005D7FCD /* IronSourceInterstitialDelegate.swift in Sources */,
 				18BD2C5A253F29A300844420 /* PreviewWidgetViewController.swift in Sources */,
 				18D4CDB2253ABC3F001A5504 /* CheckmarkView.swift in Sources */,
 				18D4CB25253ABBA2001A5504 /* QuoteCategoryTableViewController.swift in Sources */,
@@ -3325,6 +3348,7 @@
 				18BD2C69253F385300844420 /* CustomView.swift in Sources */,
 				18D4CAFE253ABAFE001A5504 /* BottomPopupViewController.swift in Sources */,
 				18D4CAFD253ABAFE001A5504 /* BottomPopupUtils.swift in Sources */,
+				18A7A8192BA416D5005D7FCD /* IronSourceBannerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

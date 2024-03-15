@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IronSource
 
 class HowToViewController: UIViewController {
 
@@ -18,6 +19,11 @@ class HowToViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var viewBg: UIView!
     
+    var bannerDelegate: BannerAdDelegate! = nil
+    var initializationDelegate: InitializationDelegate! = nil
+    var bannerView: ISBannerView! = nil
+    let appId = "1dd4517e5"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +35,44 @@ class HowToViewController: UIViewController {
                 self.stackView.transform = CGAffineTransform.identity
             })
         }
-        
+        setUpIronSource()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        destroyBanner()
+    }
+    
+    func setUpIronSource(){
+        IronSource.initWithAppKey(appId, delegate: self.initializationDelegate)
+        bannerDelegate = .init(delegate: self)
+        IronSource.setLevelPlayBannerDelegate(bannerDelegate)
+        IronSource.setAdaptersDebug(true)
+        
+      //  interstitialDelegate = .init(delegate: self)
+      //  IronSource.setLevelPlayInterstitialDelegate(interstitialDelegate)
+        
+        
+        self.showBanner()
+        
+    }
+    func showBanner(){
+        if bannerView != nil {
+           destroyBanner()
+        }
+        
+        let bannerSize: ISBannerSize = ISBannerSize(description:kSizeBanner, width:320, height:50)
+        
+        IronSource.loadBanner(with: self, size: bannerSize)
+    }
+    func destroyBanner() {
+        DispatchQueue.main.async {
+            if self.bannerView != nil {
+                IronSource.destroyBanner(self.bannerView)
+                self.bannerView = nil
+            }
+        }
+    }
 
 }
 
@@ -42,5 +83,25 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
+    }
+}
+
+extension HowToViewController: AdViewControllerDelegate {
+    func setAndBindBannerView(_ bannerView: ISBannerView!) {
+        DispatchQueue.main.async {
+            if (self.bannerView != nil) {
+                self.bannerView.removeFromSuperview()
+            }
+            
+            self.bannerView = bannerView
+            self.bannerView.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(bannerView)
+            
+            let centerX = self.bannerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            let bottom = self.bannerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            let width = self.bannerView.widthAnchor.constraint(equalToConstant: bannerView.frame.size.width)
+            let height = self.bannerView.heightAnchor.constraint(equalToConstant: bannerView.frame.size.height)
+            NSLayoutConstraint.activate([centerX, bottom, width, height])
+        }
     }
 }
