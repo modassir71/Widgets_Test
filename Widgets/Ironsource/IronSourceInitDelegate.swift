@@ -17,8 +17,5 @@ class InitializationDelegate: NSObject, ISInitializationDelegate {
     
     func initializationDidComplete() {
         print("DemoInitializationDelegate \(#function)")
-//
-//        self.delegate?.setButtonEnablement(ButtonIdentifiers.loadInterstitialButtonIdentifier, enable: true)
-//        self.delegate?.setButtonEnablement(ButtonIdentifiers.loadBannerButtonIdentifier, enable: true)
     }
 }
