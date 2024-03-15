@@ -32,6 +32,9 @@ target 'Widgets' do
   pod 'NVActivityIndicatorView', '~> 4.4.0'
   pod 'Loaf'
   pod 'Firebase/Analytics'
+  pod 'IronSourceSDK','7.9.0.0'
+  pod 'IronSourceAdQualitySDK','7.17.0'
+  pod 'Google-Mobile-Ads-SDK'
 
   # Permissions
   pod 'Permission/Notifications', :git => 'https://github.com/eb-miguelhernandez/Permission'

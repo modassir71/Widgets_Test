@@ -852,9 +852,17 @@ Copyright 2022 Google
    limitations under the License.
 
 
+## Google-Mobile-Ads-SDK
+
+Copyright 2024 Google LLC
+
 ## GoogleAppMeasurement
 
 Copyright 2022 Google
+
+## GoogleUserMessagingPlatform
+
+Copyright 2024 Google LLC
 
 ## GoogleUtilities
 
@@ -1083,6 +1091,14 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
+## IronSourceAdQualitySDK
+
+https://platform.ironsrc.com/partners/terms-and-conditions-new-user
+
+## IronSourceSDK
+
+https://platform.ironsrc.com/partners/terms-and-conditions-new-user
 
 ## Loaf
 

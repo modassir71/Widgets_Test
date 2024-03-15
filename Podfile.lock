@@ -36,6 +36,8 @@ PODS:
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
+  - Google-Mobile-Ads-SDK (11.1.0):
+    - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (10.22.0):
     - GoogleAppMeasurement/AdIdSupport (= 10.22.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
@@ -56,6 +58,7 @@ PODS:
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30911.0, >= 2.30908.0)
+  - GoogleUserMessagingPlatform (2.2.0)
   - GoogleUtilities/AppDelegateSwizzler (7.13.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -84,6 +87,8 @@ PODS:
   - GoogleUtilities/UserDefaults (7.13.0):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
+  - IronSourceAdQualitySDK (7.17.0)
+  - IronSourceSDK (7.9.0.0)
   - Loaf (0.7.0)
   - nanopb (2.30910.0):
     - nanopb/decode (= 2.30910.0)
@@ -101,6 +106,9 @@ PODS:
 DEPENDENCIES:
   - DTPagerController
   - Firebase/Analytics
+  - Google-Mobile-Ads-SDK
+  - IronSourceAdQualitySDK (= 7.17.0)
+  - IronSourceSDK (= 7.9.0.0)
   - Loaf
   - NVActivityIndicatorView (~> 4.4.0)
   - Permission/Notifications (from `https://github.com/eb-miguelhernandez/Permission`)
@@ -113,8 +121,12 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreInternal
     - FirebaseInstallations
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
+    - GoogleUserMessagingPlatform
     - GoogleUtilities
+    - IronSourceAdQualitySDK
+    - IronSourceSDK
     - Loaf
     - nanopb
     - NVActivityIndicatorView
@@ -136,14 +148,18 @@ SPEC CHECKSUMS:
   FirebaseCore: 0326ec9b05fbed8f8716cddbf0e36894a13837f7
   FirebaseCoreInternal: bca337352024b18424a61e478460547d46c4c753
   FirebaseInstallations: 763814908793c0da14c18b3dcffdec71e29ed55e
+  Google-Mobile-Ads-SDK: 4a1f2ccef63660f9a74efc6a6ea979483d421aaa
   GoogleAppMeasurement: ccefe3eac9b0aa27f96066809fb1a7fe4b462626
+  GoogleUserMessagingPlatform: d31dbfb40ec02c5d9683029815c5d5a7f46389ee
   GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
+  IronSourceAdQualitySDK: d47a30e3702706fb2985e67ea842fe5254509ed6
+  IronSourceSDK: 3fb6845fabf7b6e84e73fff61fe7a4d75691e4ac
   Loaf: d69937cd00649f3fa260beb8b7aef0a1feb861ef
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
   Permission: c53c7235f14d76cd2851364df0a7cf05b464037f
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
 
-PODFILE CHECKSUM: d42b7655a001582a399a8ed7c7fe8aa617607aed
+PODFILE CHECKSUM: eb8d6182a63685a0d4fc8719eee30f4bbf0c5a64
 
 COCOAPODS: 1.15.2
