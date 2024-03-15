@@ -22,7 +22,7 @@ class ManagePurchaseViewController: UIViewController {
     @IBOutlet weak var btnPrivacyPolicy: FilledButton!
     
     @IBOutlet weak var btnAboutUs: FilledButton!
-    
+//    MARK: - Property
     var bannerDelegate: BannerAdDelegate! = nil
     var initializationDelegate: InitializationDelegate! = nil
     var bannerView: ISBannerView! = nil
@@ -35,14 +35,16 @@ class ManagePurchaseViewController: UIViewController {
         btnPrivacyPolicy.dropShadow()
         btnWriteReview.dropShadow()
         btnShareApp.dropShadow()
+//        MARK: - Ironsource Method Called
         setUpIronSource()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+//        MARK: - Destroy Method called
         destroyBanner()
     }
-    
+//    MARK: - Initialize Ironsource Method
     func setUpIronSource(){
         IronSource.initWithAppKey(appId, delegate: self.initializationDelegate)
         bannerDelegate = .init(delegate: self)
@@ -51,16 +53,17 @@ class ManagePurchaseViewController: UIViewController {
         self.showBanner()
         
     }
+//    MARK: - Show Banner
     func showBanner(){
         if bannerView != nil {
             destroyBanner()
         }
-        
+        //Banner Size
         let bannerSize: ISBannerSize = ISBannerSize(description:kSizeBanner, width:320, height:50)
-        
+        //Load Banner
         IronSource.loadBanner(with: self, size: bannerSize)
     }
-    
+//    MARK: - Destroy Banner
     func destroyBanner() {
         DispatchQueue.main.async {
             if self.bannerView != nil {
@@ -101,7 +104,7 @@ class ManagePurchaseViewController: UIViewController {
     }
     
 }
-
+//MARK: - Ironsource Delegate method Extension
 extension ManagePurchaseViewController: AdViewControllerDelegate{
     func setAndBindBannerView(_ bannerView: ISBannerView!) {
         DispatchQueue.main.async {

@@ -10,5 +10,4 @@ import IronSource
 
 protocol AdViewControllerDelegate: NSObjectProtocol {
     func setAndBindBannerView(_ bannerView: ISBannerView!)
-   
 }

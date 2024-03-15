@@ -35,7 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnRateUs: UIButton!
     
     var widgets:[WidgetCollection] = []
+//    MARK: - Banner View
     @IBOutlet weak var bannerView: GADBannerView!
+//    MARK: - GAD Variable
     var interstitial: GADInterstitialAd?
     
     var attrs = [
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        MARK: - Called Interstitial Ads
         setInterstitialAds()
         registerCell()
         
@@ -74,6 +77,7 @@ class ViewController: UIViewController {
         let buttonTitleStr1 = NSMutableAttributedString(string:"Feedback", attributes:attrs)
         attributedString1.append(buttonTitleStr1)
         btnFeedBack.setAttributedTitle(attributedString1, for: .normal)
+//    MARK: - Called banner View
         setBannerView()
     }
     
@@ -96,7 +100,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+//    MARK: - Initialize and Load Interstitial Ads
     func setInterstitialAds(){
         let request = GADRequest()
                 GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: request) { [weak self] ad, error in
@@ -109,7 +113,7 @@ class ViewController: UIViewController {
                     self?.showInterstitialAd()
                 }
     }
-    
+//    MARK: - Show Interstitial Ads
     func showInterstitialAd() {
             if interstitial != nil {
                 interstitial?.present(fromRootViewController: self)
@@ -117,7 +121,7 @@ class ViewController: UIViewController {
                 print("Ad wasn't ready")
             }
         }
-    
+//    MARK: - Show Banner
     func setBannerView(){
         //ca-app-pub-3905803916884899/5846712370 not working
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
@@ -296,7 +300,7 @@ extension ViewController:SOPullUpViewDataSource{
         return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0x00FF00) >> 8))/255.0, blue: ((CGFloat)((rgbValue & 0x0000FF)))/255.0, alpha: 1.0)
     }
 }
-
+//MARK: - Banner View Extension
 extension ViewController: GADBannerViewDelegate{
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
       print("bannerViewDidReceiveAd")

@@ -21,11 +21,14 @@ class WidgetTemplatesViewController: UIViewController {
     var colors:[UIColor]=[UIColor.black,UIColor.green,UIColor.orange,UIColor.yellow,UIColor.blue,UIColor.brown,UIColor.systemPink,UIColor.systemRed,UIColor(named: "DarkColor")!,UIColor.magenta]
     var allTemplates:[TemplateWidget] = []
     var templateSelection:templateSelection!
+//    MARK: - Tapcount Variable
     var tapCount = 0
+//    MARK: - Intertitial Variable
     var interstitialDelegate: IntertitialDelegate! = nil
     var initializationDelegate: InitializationDelegate! = nil
+//    MARK: - App key
     var appKey = "1dd4517e5"
-
+    
     var pullUpControl: SOPullUpControl? {
          didSet {
              pullUpControl?.delegate = self
@@ -47,6 +50,7 @@ class WidgetTemplatesViewController: UIViewController {
         templatesTable.backgroundColor = UIColor(named: "DarkColor")//UIColor(hexString: "003399")
         templatesTable.backgroundView = UIView(frame: CGRect.zero)
         loadTemplates()
+        // MARK: - SetIronSource Delegate Method Called
         setIronSource()
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceivePurchaseNotif), name: NSNotification.Name(rawValue: "purchaseNotification"), object: nil)
         
@@ -55,7 +59,7 @@ class WidgetTemplatesViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+//    MARK: - Set IronSource Method
     func setIronSource(){
         interstitialDelegate = .init(delegate: self)
         IronSource.setLevelPlayInterstitialDelegate(interstitialDelegate)
@@ -244,6 +248,7 @@ extension WidgetTemplatesViewController: UICollectionViewDelegate,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        MARK: - Manage Tap count and show Ads
         if tapCount == 0 {
             IronSource.loadInterstitial()
         }else if tapCount == 2{
@@ -252,6 +257,7 @@ extension WidgetTemplatesViewController: UICollectionViewDelegate,UICollectionVi
                 IronSource.showInterstitial(with: self)
             }
         }
+//        MARK: - Increase Tap count
         tapCount += 1
         guard let collectionView  =  collectionView as? TemplateCollectionView else { return }
 
@@ -306,11 +312,9 @@ extension WidgetTemplatesViewController:SOPullUpViewDelegate{
         return self.view
     }
 }
-
+//MARK: - Extension of IronSource Delegate
 extension WidgetTemplatesViewController: AdViewControllerDelegate{
     func setAndBindBannerView(_ bannerView: ISBannerView!) {
         
     }
-    
-    
 }

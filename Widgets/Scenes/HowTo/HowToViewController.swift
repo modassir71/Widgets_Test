@@ -18,7 +18,7 @@ class HowToViewController: UIViewController {
     @IBOutlet weak var viewStep5: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var viewBg: UIView!
-    
+//MARK: - Property
     var bannerDelegate: BannerAdDelegate! = nil
     var initializationDelegate: InitializationDelegate! = nil
     var bannerView: ISBannerView! = nil
@@ -35,36 +35,33 @@ class HowToViewController: UIViewController {
                 self.stackView.transform = CGAffineTransform.identity
             })
         }
+//        MARK: - IronSource Method called
         setUpIronSource()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+//        MARK: - Destroy Banner Called
         destroyBanner()
     }
-    
+//    MARK: - Setup Iron source
     func setUpIronSource(){
         IronSource.initWithAppKey(appId, delegate: self.initializationDelegate)
         bannerDelegate = .init(delegate: self)
         IronSource.setLevelPlayBannerDelegate(bannerDelegate)
         IronSource.setAdaptersDebug(true)
-        
-      //  interstitialDelegate = .init(delegate: self)
-      //  IronSource.setLevelPlayInterstitialDelegate(interstitialDelegate)
-        
-        
         self.showBanner()
-        
     }
+//    MARK: - Show Banner
     func showBanner(){
         if bannerView != nil {
            destroyBanner()
         }
-        
         let bannerSize: ISBannerSize = ISBannerSize(description:kSizeBanner, width:320, height:50)
         
         IronSource.loadBanner(with: self, size: bannerSize)
     }
+//    MARK: - Destroy Banner
     func destroyBanner() {
         DispatchQueue.main.async {
             if self.bannerView != nil {
@@ -85,7 +82,7 @@ extension UIView {
         layer.mask = mask
     }
 }
-
+//MARK: - Set Banner View in screen
 extension HowToViewController: AdViewControllerDelegate {
     func setAndBindBannerView(_ bannerView: ISBannerView!) {
         DispatchQueue.main.async {
