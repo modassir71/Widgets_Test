@@ -94,6 +94,7 @@
 		18A7A81A2BA416D5005D7FCD /* IronSourceInterstitialDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8162BA416D4005D7FCD /* IronSourceInterstitialDelegate.swift */; };
 		18A7A81B2BA416D5005D7FCD /* IronSourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8172BA416D5005D7FCD /* IronSourceProtocols.swift */; };
 		18A7A81C2BA416D5005D7FCD /* IronSourceInitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8182BA416D5005D7FCD /* IronSourceInitDelegate.swift */; };
+		18A7A8232BA44702005D7FCD /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7A8222BA44702005D7FCD /* BannerView.swift */; };
 		18A8E5E725385BDE00448BF6 /* WidgetTemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E5E625385BDE00448BF6 /* WidgetTemplatesViewController.swift */; };
 		18A8E62B253862F100448BF6 /* templates.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8E62A253862F100448BF6 /* templates.json */; };
 		18A8E64C253865DE00448BF6 /* PullUpController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E646253865DE00448BF6 /* PullUpController+Animation.swift */; };
@@ -898,6 +899,7 @@
 		18A7A8162BA416D4005D7FCD /* IronSourceInterstitialDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialDelegate.swift; sourceTree = "<group>"; };
 		18A7A8172BA416D5005D7FCD /* IronSourceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceProtocols.swift; sourceTree = "<group>"; };
 		18A7A8182BA416D5005D7FCD /* IronSourceInitDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInitDelegate.swift; sourceTree = "<group>"; };
+		18A7A8222BA44702005D7FCD /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		18A8E5E625385BDE00448BF6 /* WidgetTemplatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTemplatesViewController.swift; sourceTree = "<group>"; };
 		18A8E62A253862F100448BF6 /* templates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = templates.json; sourceTree = "<group>"; };
 		18A8E646253865DE00448BF6 /* PullUpController+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PullUpController+Animation.swift"; sourceTree = "<group>"; };
@@ -1435,8 +1437,16 @@
 				18A7A8182BA416D5005D7FCD /* IronSourceInitDelegate.swift */,
 				18A7A8162BA416D4005D7FCD /* IronSourceInterstitialDelegate.swift */,
 				18A7A8172BA416D5005D7FCD /* IronSourceProtocols.swift */,
+				18A7A8222BA44702005D7FCD /* BannerView.swift */,
 			);
 			path = Ironsource;
+			sourceTree = "<group>";
+		};
+		18A7A81D2BA44672005D7FCD /* Banners */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Banners;
 			sourceTree = "<group>";
 		};
 		18A8E644253865DE00448BF6 /* SOPullUpView */ = {
@@ -2104,6 +2114,7 @@
 		18FAF0492538252B009E53C6 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				18A7A81D2BA44672005D7FCD /* Banners */,
 				18A7A8142BA416A6005D7FCD /* Ironsource */,
 				18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */,
 				180E5CB0253AF62B009FA6B5 /* Widgets.entitlements */,
@@ -3251,6 +3262,7 @@
 				18D4CDB9253ABC3F001A5504 /* GradientView.swift in Sources */,
 				18A8E64D253865DE00448BF6 /* PullUpControl.swift in Sources */,
 				18D4CDB0253ABC3F001A5504 /* UnsplashPhotoPickerViewController.swift in Sources */,
+				18A7A8232BA44702005D7FCD /* BannerView.swift in Sources */,
 				18D4CD93253ABC3F001A5504 /* ExString.swift in Sources */,
 				18D4CAFF253ABAFE001A5504 /* BottomPopupDismissInteractionController.swift in Sources */,
 				EB99E3EA2622016B00136C65 /* NotificationsDataManager.swift in Sources */,

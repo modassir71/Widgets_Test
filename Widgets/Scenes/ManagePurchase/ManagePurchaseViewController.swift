@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 import IronSource
 
-class ManagePurchaseViewController: UIViewController {
+class ManagePurchaseViewController: BannerViewController {
     
     
     @IBOutlet weak var viewHeader: UIView!
@@ -22,11 +22,6 @@ class ManagePurchaseViewController: UIViewController {
     @IBOutlet weak var btnPrivacyPolicy: FilledButton!
     
     @IBOutlet weak var btnAboutUs: FilledButton!
-//    MARK: - Property
-    var bannerDelegate: BannerAdDelegate! = nil
-    var initializationDelegate: InitializationDelegate! = nil
-    var bannerView: ISBannerView! = nil
-    let appId = "1dd4517e5"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,43 +30,17 @@ class ManagePurchaseViewController: UIViewController {
         btnPrivacyPolicy.dropShadow()
         btnWriteReview.dropShadow()
         btnShareApp.dropShadow()
-//        MARK: - Ironsource Method Called
-        setUpIronSource()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setBanner()
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        MARK: - Destroy Method called
         destroyBanner()
     }
-//    MARK: - Initialize Ironsource Method
-    func setUpIronSource(){
-        IronSource.initWithAppKey(appId, delegate: self.initializationDelegate)
-        bannerDelegate = .init(delegate: self)
-        IronSource.setLevelPlayBannerDelegate(bannerDelegate)
-        IronSource.setAdaptersDebug(true)
-        self.showBanner()
-        
-    }
-//    MARK: - Show Banner
-    func showBanner(){
-        if bannerView != nil {
-            destroyBanner()
-        }
-        //Banner Size
-        let bannerSize: ISBannerSize = ISBannerSize(description:kSizeBanner, width:320, height:50)
-        //Load Banner
-        IronSource.loadBanner(with: self, size: bannerSize)
-    }
-//    MARK: - Destroy Banner
-    func destroyBanner() {
-        DispatchQueue.main.async {
-            if self.bannerView != nil {
-                IronSource.destroyBanner(self.bannerView)
-                self.bannerView = nil
-            }
-        }
-    }
+
 
     @IBAction func shareBtnClicked(){
         let items = [Constants.shareAppMessage]
@@ -104,23 +73,4 @@ class ManagePurchaseViewController: UIViewController {
     }
     
 }
-//MARK: - Ironsource Delegate method Extension
-extension ManagePurchaseViewController: AdViewControllerDelegate{
-    func setAndBindBannerView(_ bannerView: ISBannerView!) {
-        DispatchQueue.main.async {
-            if (self.bannerView != nil) {
-                self.bannerView.removeFromSuperview()
-            }
-            
-            self.bannerView = bannerView
-            self.bannerView.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview(bannerView)
-            
-            let centerX = self.bannerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-            let bottom = self.bannerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-            let width = self.bannerView.widthAnchor.constraint(equalToConstant: bannerView.frame.size.width)
-            let height = self.bannerView.heightAnchor.constraint(equalToConstant: bannerView.frame.size.height)
-            NSLayoutConstraint.activate([centerX, bottom, width, height])
-        }
-    }
-}
+
