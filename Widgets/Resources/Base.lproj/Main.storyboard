@@ -122,17 +122,27 @@
                                     <action selector="infoBtnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Dl-X7-eIl"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-T3-ccM" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="303" width="414" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="NgM-ZL-jQa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="SFa-Pb-TYN" firstAttribute="top" secondItem="3gs-w2-dfx" secondAttribute="bottom" constant="80" id="4mc-7x-Zry"/>
                             <constraint firstItem="SFa-Pb-TYN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Bl8-yi-eVQ"/>
                             <constraint firstItem="oQs-6Q-0gI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EZF-aB-6Bz"/>
+                            <constraint firstItem="hFx-T3-ccM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J2F-Se-PU6"/>
                             <constraint firstItem="3gs-w2-dfx" firstAttribute="top" secondItem="BCN-GF-iPI" secondAttribute="bottom" constant="40" id="JRU-X7-LLp"/>
+                            <constraint firstItem="hFx-T3-ccM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K0h-M7-UJE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BCN-GF-iPI" secondAttribute="trailing" constant="20" id="MTf-wh-oBG"/>
                             <constraint firstItem="3gs-w2-dfx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N3v-14-B8w"/>
+                            <constraint firstItem="hFx-T3-ccM" firstAttribute="top" secondItem="3gs-w2-dfx" secondAttribute="bottom" id="SJ4-oF-joh"/>
                             <constraint firstItem="oQs-6Q-0gI" firstAttribute="centerY" secondItem="BCN-GF-iPI" secondAttribute="centerY" id="dgt-7R-tre"/>
+                            <constraint firstItem="SFa-Pb-TYN" firstAttribute="top" secondItem="hFx-T3-ccM" secondAttribute="bottom" id="fdg-GC-ht7"/>
                             <constraint firstItem="3gs-w2-dfx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="irB-uT-Gh3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SFa-Pb-TYN" secondAttribute="trailing" constant="40" id="kYK-8F-gbe"/>
                             <constraint firstItem="BCN-GF-iPI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wwd-GL-teA"/>
@@ -141,6 +151,7 @@
                     <navigationItem key="navigationItem" id="PP1-Nu-IZm"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="hFx-T3-ccM" id="fYr-rR-oA1"/>
                         <outlet property="btnFeedBack" destination="8su-oZ-vGa" id="LbH-3I-QQq"/>
                         <outlet property="btnRateUs" destination="LKT-73-A7F" id="mFt-ny-pHg"/>
                         <outlet property="templateCollection" destination="3gs-w2-dfx" id="37n-eq-9WD"/>

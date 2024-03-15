@@ -11,6 +11,7 @@ import WidgetKit
 import StoreKit
 import MessageUI
 import AppTrackingTransparency
+import GoogleMobileAds
 
 struct CharacterDetail {
     let name: String
@@ -26,13 +27,16 @@ struct CharacterDetail {
 }
 
 class ViewController: UIViewController {
+    
     private let pullUpControl = SOPullUpControl()
     @IBOutlet weak var templateCollection: TemplateCollectionView!
 
     @IBOutlet weak var btnFeedBack: UIButton!
     @IBOutlet weak var btnRateUs: UIButton!
-    var widgets:[WidgetCollection] = []
     
+    var widgets:[WidgetCollection] = []
+    @IBOutlet weak var bannerView: GADBannerView!
+    var interstitial: GADInterstitialAd?
     
     var attrs = [
         NSAttributedString.Key.font : UIFont.systemFont(ofSize: 19.0),
@@ -45,6 +49,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setInterstitialAds()
         registerCell()
         
         pullUpControl.dataSource = self
@@ -70,7 +75,7 @@ class ViewController: UIViewController {
         attributedString1.append(buttonTitleStr1)
         btnFeedBack.setAttributedTitle(attributedString1, for: .normal)
         
-        
+        setBannerView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,6 +96,35 @@ class ViewController: UIViewController {
                 print(status)
             }
         }
+    }
+    
+    func setInterstitialAds(){
+        let request = GADRequest()
+                GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: request) { [weak self] ad, error in
+                    if let error = error {
+                        print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                        return
+                    }
+                    self?.interstitial = ad
+                    self?.interstitial?.fullScreenContentDelegate = self
+                    self?.showInterstitialAd()
+                }
+    }
+    
+    func showInterstitialAd() {
+            if interstitial != nil {
+                interstitial?.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+            }
+        }
+    
+    func setBannerView(){
+        //ca-app-pub-3905803916884899/5846712370 not working
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
     }
     
     func loadWidgets() {
@@ -262,4 +296,34 @@ extension ViewController:SOPullUpViewDataSource{
     static func UIColorFromRGB(_ rgbValue: Int) -> UIColor {
         return UIColor(red: ((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0, green: ((CGFloat)((rgbValue & 0x00FF00) >> 8))/255.0, blue: ((CGFloat)((rgbValue & 0x0000FF)))/255.0, alpha: 1.0)
     }
+}
+
+extension ViewController: GADBannerViewDelegate{
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+}
+
+extension ViewController: GADFullScreenContentDelegate{
+    
 }
