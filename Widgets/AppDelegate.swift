@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import AppTrackingTransparency
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
 
         }
-        
+        FirebaseApp.configure()
         return true
     }
     

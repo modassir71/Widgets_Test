@@ -31,6 +31,7 @@ target 'Widgets' do
   pod 'DTPagerController'
   pod 'NVActivityIndicatorView', '~> 4.4.0'
   pod 'Loaf'
+  pod 'Firebase/Analytics'
 
   # Permissions
   pod 'Permission/Notifications', :git => 'https://github.com/eb-miguelhernandez/Permission'

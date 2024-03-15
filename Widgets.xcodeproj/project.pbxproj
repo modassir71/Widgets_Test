@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -89,6 +89,7 @@
 		187EC7032538781E0066EEBF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EC7002538781E0066EEBF /* UIColor+Extension.swift */; };
 		1886601B253DDBC0005158FC /* Dimentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886601A253DDBC0005158FC /* Dimentions.swift */; };
 		1887AA3E254EA0A200EF14F8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887AA3D254EA0A200EF14F8 /* UIViewController+Extension.swift */; };
+		18A7A8112BA412F8005D7FCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */; };
 		18A8E5E725385BDE00448BF6 /* WidgetTemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E5E625385BDE00448BF6 /* WidgetTemplatesViewController.swift */; };
 		18A8E62B253862F100448BF6 /* templates.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A8E62A253862F100448BF6 /* templates.json */; };
 		18A8E64C253865DE00448BF6 /* PullUpController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8E646253865DE00448BF6 /* PullUpController+Animation.swift */; };
@@ -888,6 +889,7 @@
 		187EC7002538781E0066EEBF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1886601A253DDBC0005158FC /* Dimentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimentions.swift; sourceTree = "<group>"; };
 		1887AA3D254EA0A200EF14F8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18A8E5E625385BDE00448BF6 /* WidgetTemplatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTemplatesViewController.swift; sourceTree = "<group>"; };
 		18A8E62A253862F100448BF6 /* templates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = templates.json; sourceTree = "<group>"; };
 		18A8E646253865DE00448BF6 /* PullUpController+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PullUpController+Animation.swift"; sourceTree = "<group>"; };
@@ -2083,6 +2085,7 @@
 		18FAF0492538252B009E53C6 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				18A7A8102BA412F8005D7FCD /* GoogleService-Info.plist */,
 				180E5CB0253AF62B009FA6B5 /* Widgets.entitlements */,
 				0489E913259CD5EF0039F19D /* WidgetsDebug.entitlements */,
 				0487809228ABEB01005A84F4 /* Extensions */,
@@ -2590,6 +2593,7 @@
 				18BCEBE725429968000FE1BD /* LilyScriptOne-Regular.ttf in Resources */,
 				18BD2C4F253EE40100844420 /* george bernard shaw.json in Resources */,
 				18E6544D25407A46003903D6 /* DenseLetters-nRgDO.otf in Resources */,
+				18A7A8112BA412F8005D7FCD /* GoogleService-Info.plist in Resources */,
 				18BD2BC1253EE40100844420 /* past.json in Resources */,
 				18BCEBE125429968000FE1BD /* DancingScript-Bold.ttf in Resources */,
 				18BD2AEB253EE40100844420 /* quality.json in Resources */,
