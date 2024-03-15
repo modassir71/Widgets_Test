@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
 
         }
+//        MARK: - Configure Firebase
         FirebaseApp.configure()
         return true
     }
