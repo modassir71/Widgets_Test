@@ -74,7 +74,6 @@ class ViewController: UIViewController {
         let buttonTitleStr1 = NSMutableAttributedString(string:"Feedback", attributes:attrs)
         attributedString1.append(buttonTitleStr1)
         btnFeedBack.setAttributedTitle(attributedString1, for: .normal)
-        
         setBannerView()
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import IronSource
 
 typealias templateSelection = ((WidgetCollection) -> Void)?
 class WidgetTemplatesViewController: UIViewController {
@@ -20,6 +21,10 @@ class WidgetTemplatesViewController: UIViewController {
     var colors:[UIColor]=[UIColor.black,UIColor.green,UIColor.orange,UIColor.yellow,UIColor.blue,UIColor.brown,UIColor.systemPink,UIColor.systemRed,UIColor(named: "DarkColor")!,UIColor.magenta]
     var allTemplates:[TemplateWidget] = []
     var templateSelection:templateSelection!
+    var tapCount = 0
+    var interstitialDelegate: IntertitialDelegate! = nil
+    var initializationDelegate: InitializationDelegate! = nil
+    var appKey = "1dd4517e5"
 
     var pullUpControl: SOPullUpControl? {
          didSet {
@@ -42,13 +47,20 @@ class WidgetTemplatesViewController: UIViewController {
         templatesTable.backgroundColor = UIColor(named: "DarkColor")//UIColor(hexString: "003399")
         templatesTable.backgroundView = UIView(frame: CGRect.zero)
         loadTemplates()
-
+        setIronSource()
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceivePurchaseNotif), name: NSNotification.Name(rawValue: "purchaseNotification"), object: nil)
         
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func setIronSource(){
+        interstitialDelegate = .init(delegate: self)
+        IronSource.setLevelPlayInterstitialDelegate(interstitialDelegate)
+        
+        IronSource.initWithAppKey(appKey, delegate: self.initializationDelegate)
     }
     
     @objc func onDidReceivePurchaseNotif(){
@@ -232,6 +244,15 @@ extension WidgetTemplatesViewController: UICollectionViewDelegate,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if tapCount == 0 {
+            IronSource.loadInterstitial()
+        }else if tapCount == 2{
+            tapCount = 0
+            if IronSource.hasInterstitial() {
+                IronSource.showInterstitial(with: self)
+            }
+        }
+        tapCount += 1
         guard let collectionView  =  collectionView as? TemplateCollectionView else { return }
 
         let template = collectionView.templateWidgets[indexPath.section]
@@ -284,4 +305,12 @@ extension WidgetTemplatesViewController:SOPullUpViewDelegate{
     func pullUpHandleArea(_ sender: UIViewController) -> UIView {
         return self.view
     }
+}
+
+extension WidgetTemplatesViewController: AdViewControllerDelegate{
+    func setAndBindBannerView(_ bannerView: ISBannerView!) {
+        
+    }
+    
+    
 }
