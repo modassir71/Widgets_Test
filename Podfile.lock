@@ -1,0 +1,40 @@
+PODS:
+  - DTPagerController (3.1.2)
+  - Loaf (0.7.0)
+  - NVActivityIndicatorView (4.4.1):
+    - NVActivityIndicatorView/Presenter (= 4.4.1)
+  - NVActivityIndicatorView/Presenter (4.4.1)
+  - Permission/Core (2.0.4)
+  - Permission/Notifications (2.0.4):
+    - Permission/Core
+
+DEPENDENCIES:
+  - DTPagerController
+  - Loaf
+  - NVActivityIndicatorView (~> 4.4.0)
+  - Permission/Notifications (from `https://github.com/eb-miguelhernandez/Permission`)
+
+SPEC REPOS:
+  trunk:
+    - DTPagerController
+    - Loaf
+    - NVActivityIndicatorView
+
+EXTERNAL SOURCES:
+  Permission:
+    :git: https://github.com/eb-miguelhernandez/Permission
+
+CHECKOUT OPTIONS:
+  Permission:
+    :commit: 6ea486cd14e9bf7731e74e827e5cb90110f90404
+    :git: https://github.com/eb-miguelhernandez/Permission
+
+SPEC CHECKSUMS:
+  DTPagerController: 91769c8711ad390bb48a984f3f1989712110e3f5
+  Loaf: d69937cd00649f3fa260beb8b7aef0a1feb861ef
+  NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
+  Permission: c53c7235f14d76cd2851364df0a7cf05b464037f
+
+PODFILE CHECKSUM: 3cb121ea1b614a1b493416f73c6170e04c26295e
+
+COCOAPODS: 1.14.3

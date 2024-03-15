@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Widgets/Pods-Widgets-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DTPagerController/DTPagerController.framework
+${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/Permission/Permission.framework
